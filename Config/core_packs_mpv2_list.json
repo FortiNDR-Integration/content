@@ -1,5 +1,6 @@
 {
   "core_packs_list": [
+    "AggregatedScripts",
     "AutoFocus",
     "Base",
     "CommonPlaybooks",
@@ -22,9 +23,11 @@
     "Unit42Intel",
     "VirusTotal",
     "Whois",
-    "rasterize"
+    "rasterize",
+    "CortexResponseAndRemediation"
   ],
   "update_core_packs_list": [
+    "AggregatedScripts",
     "AutoFocus",
     "Base",
     "CommonPlaybooks",
@@ -47,6 +50,7 @@
     "Unit42Intel",
     "VirusTotal",
     "Whois",
-    "rasterize"
+    "rasterize",
+    "CortexResponseAndRemediation"
   ]
 }

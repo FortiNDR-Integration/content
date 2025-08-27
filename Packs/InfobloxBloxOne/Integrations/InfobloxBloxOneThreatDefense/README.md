@@ -1,22 +1,16 @@
 BloxOne Threat Defense is a hybrid cybersecurity solution that leverages DNS as the first line of defense to detect and block cyber threats.
 
-## Configure Infoblox BloxOne Threat Defense on Cortex XSOAR
+## Configure Infoblox BloxOne Threat Defense in Cortex
 
-1. Navigate to **Settings** > **Integrations** > **Servers & Services**.
-2. Search for Infoblox BloxOne Threat Defense.
-3. Click **Add instance** to create and configure a new integration instance.
-
-    | **Parameter**                      | **Required** |
-    | ---------------------------------- | ------------ |
-    | Service API Key                    | True         |
-    | Trust any certificate (not secure) | False        |
-    | Use system proxy settings          | False        |
-
-4. Click **Test** to validate the URLs, token, and connection.
+| **Parameter**                      | **Required** |
+| ---------------------------------- | ------------ |
+| Service API Key                    | True         |
+| Trust any certificate (not secure) | False        |
+| Use system proxy settings          | False        |
 
 ## Commands
 
-You can execute these commands from the Cortex XSOAR CLI, as part of an automation, or in a playbook.
+You can execute these commands from the CLI, as part of an automation, or in a playbook.
 After you successfully execute a command, a DBot message appears in the War Room with the command details.
 
 ### bloxone-td-dossier-lookup-get
@@ -49,8 +43,11 @@ The Dossier Lookup API returns detailed information on the specified indicator f
 | BloxOneTD.DossierLookup.type    | String   | The indicator type.     |
 
 #### Command example
+
 ```!bloxone-td-dossier-lookup-get indicator_type="ip" value="11.22.33.44" sources="activity,threatfox,ccb"```
+
 #### Context Example
+
 ```json
 {
     "BloxOneTD": {
@@ -103,12 +100,12 @@ The Dossier Lookup API returns detailed information on the specified indicator f
 #### Human Readable Output
 
 >### Lookalike Domain List
+>
 >|Task Id|Type|Target|Source|
 >|---|---|---|---|
 >| d418b8d6-831c-4f6f-a31a-6d48995d2267 | ip | 11.22.33.44 | threatfox |
 >| 91945be3-0cef-4d03-afd7-e4f25864553d | ip | 11.22.33.44 | ccb |
 >| 7145a1ca-40a9-43df-b0a3-c4281e5abd7e | ip | 11.22.33.44 | activity |
-
 
 ### bloxone-td-dossier-source-list
 
@@ -130,8 +127,11 @@ There are no input arguments for this command.
 | BloxOneTD.DossierSource | String   | Available Dossier sources. |
 
 #### Command example
+
 ```!bloxone-td-dossier-source-list```
+
 #### Context Example
+
 ```json
 {
     "BloxOneTD": {
@@ -148,13 +148,13 @@ There are no input arguments for this command.
 #### Human Readable Output
 
 >### Results
+>
 >|DossierSource|
 >|---|
 >| activity |
 >| ccb |
 >| geo |
 >| threatfox |
-
 
 ### bloxone-td-lookalike-domain-list
 
@@ -188,8 +188,11 @@ Notice: Submitting indicators using this command might make the indicator data p
 | BloxOneTD.LookalikeDomain.target_domain    | String   | The domain that was targeted by the lookalike domain. |
 
 #### Command example
+
 ```!bloxone-td-lookalike-domain-list detected_at="1y"```
+
 #### Context Example
+
 ```json
 {
     "BloxOneTD": {
@@ -224,6 +227,7 @@ Notice: Submitting indicators using this command might make the indicator data p
 #### Human Readable Output
 
 >### Results
+>
 >|Detected At|Lookalike Domain|Lookalike Host|Reason|Target Domain|
 >|---|---|---|---|---|
 >| 2023-01-27T18:43:01Z | test.a.com | test.a.com | Domain is a lookalike to test.com. The creation date is 2023-01-22. | test.com |
